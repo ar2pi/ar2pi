@@ -1,5 +1,9 @@
 install:
+	@echo "=== Installing requirements ==="
 	pip install -r requirements.txt
+	@echo "=== Configuring hooks ==="
+	git config --local core.hooksPath hooks
+	@echo "=== Done. ==="
 
 build:
 	mkdocs build
