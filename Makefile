@@ -13,8 +13,6 @@ deploy:
 	cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
 		&& git reset --hard
-	git commit -am "deploy ar2pi.github.io" \
-		&& git push
 
 serve:
 	mkdocs serve
