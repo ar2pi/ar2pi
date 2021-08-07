@@ -1,6 +1,7 @@
 site_name: ar2pi
 site_url: https://ar2pi.github.io
-repo_url: https://github.com/ar2pi/ar2pi.github.io/
+repo_url: https://github.com/ar2pi/ar2pi/
+edit_uri: edit/main/docs/
 remote_branch: main
 
 nav:

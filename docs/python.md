@@ -13,7 +13,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 > `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
 
-Install [Python 3]()
+Install [Python 3](https://www.python.org/download/releases/3.0/)
 ```sh
 # list possible python versions
 pyenv install --list
