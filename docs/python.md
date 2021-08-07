@@ -36,6 +36,23 @@ pyenv virtualenvs
 pyenv uninstall python3
 ```
 
+## Generate a requirements.txt file
+
+```sh
+# create new isolated virtualenv
+pyenv virtualenv 3.9.5 NAME
+# install dependencies 
+pip install DEPENDENCY_1 DEPENDENCY_2
+# freeze requirements
+pip freeze > requirements.txt
+```
+
+## Install dependencies from a requirements.txt file
+
+```sh
+pip install -r requirements.txt
+```
+
 ## Containerized Python development
 
 - [Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
