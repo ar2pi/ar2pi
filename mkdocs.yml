@@ -5,7 +5,7 @@ edit_uri: edit/main/docs/
 remote_branch: main
 
 nav:
-  - About: index.md
+  - Aboutss: index.md
   - Python: python.md
 
 theme:
