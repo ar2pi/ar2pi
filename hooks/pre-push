@@ -3,6 +3,6 @@
 echo "Running pre-push hook:"
 
 echo "Deploying changes..."
-# make deploy
+make deploy
 
 exit 0
