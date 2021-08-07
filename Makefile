@@ -10,7 +10,9 @@ build:
 
 deploy:
 	git pull --recurse-submodules
-	cd ar2pi.github.io && mkdocs gh-deploy --config-file ../mkdocs.yml
+	cd ar2pi.github.io \
+		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
+		&& git reset --hard
 
 serve:
 	mkdocs serve
