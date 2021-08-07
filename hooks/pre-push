@@ -1,8 +1,17 @@
 #!/bin/sh
 
+set -eu
+
+current_branch=$(git branch --show-current)
+watch_files="docs/ mkdocs.yml"
+
 echo "Running pre-push hook:"
 
-echo "Deploying changes..."
-make deploy
+if [[ $(git diff --name-status $current_branch "origin/$current_branch" -- $watch_files) ]]; then
+    echo "Changes to $watch_files, deploying"
+    make deploy
+else
+    echo "No changes to $watch_files, continue"
+fi
 
 exit 0
