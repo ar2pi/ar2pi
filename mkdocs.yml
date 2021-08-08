@@ -7,6 +7,7 @@ remote_branch: main
 nav:
   - About: index.md
   - Python: python.md
+  - Linux: linux.md
   - Network: network.md
 
 theme:
