@@ -28,6 +28,6 @@ update-build-version:
 	git add ar2pi.github.io
 	git commit -m "ci: update build version"
 
-.PHONY: push
-push: deploy update-build-version
+.PHONY: publish
+publish: deploy update-build-version
 	git push --no-verify
