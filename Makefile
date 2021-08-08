@@ -12,6 +12,9 @@ install:
 	@echo -e "${PINK}=== Configuring hooks"
 	@echo -en "${CYAN}"
 	git config --local core.hooksPath hooks
+	@echo -e "${PINK}=== Checking out submodules"
+	@echo -en "${CYAN}"
+	git pull --recurse-submodules
 	@echo -e "${PINK}=== Done."
 
 build:
@@ -20,10 +23,10 @@ build:
 
 deploy:
 	@echo -en "${CYAN}"
-	git pull --recurse-submodules
 	cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
 		&& git reset --hard
+	git pull --recurse-submodules
 
 serve:
 	@echo -en "${CYAN}"
