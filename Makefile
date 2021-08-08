@@ -28,8 +28,7 @@ build:
 deploy:
 	@echo -en "${CYAN}"
 	cd ar2pi.github.io \
-		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
-		&& git reset --hard
+		&& mkdocs gh-deploy --config-file ../mkdocs.yml
 	git pull --recurse-submodules --no-rebase --ff
 
 .PHONY: serve
