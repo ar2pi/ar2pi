@@ -3,7 +3,7 @@
 ## Get current release version
 
 ```sh
-cat /etc/os-release | sed -nr "s/VERSION=\"(.*)\"/\1/p"
+cat /etc/os-release | sed -nE "s/VERSION=\"(.*)\"/\1/p"
 ```
 
 ## Get Ubuntu base debian version
