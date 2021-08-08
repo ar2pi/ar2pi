@@ -10,11 +10,11 @@ watch_files="docs/ mkdocs.yml"
 
 echo -e "${PINK}=== Running pre-push hook"
 
-# if [[ $(git diff --name-status $current_branch "origin/$current_branch" -- $watch_files) ]]; then
-#     echo -e "${PINK}=== Changes to [$watch_files], deploying${CYAN}"
-#     make deploy
-# else
-#     echo -e "${PINK}=== No changes to [$watch_files], continue${CYAN}"
-# fi
+if [[ $(git diff --name-status $current_branch "origin/$current_branch" -- $watch_files) ]]; then
+    echo -e "${PINK}=== Changes to [$watch_files], deploying${CYAN}"
+    make deploy
+else
+    echo -e "${PINK}=== No changes to [$watch_files], continue${CYAN}"
+fi
 
 exit 0
