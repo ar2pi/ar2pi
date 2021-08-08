@@ -2,14 +2,16 @@
 
 ## Local setup
 
-Install [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv). Respectively for Python version management and virtualenvs management. 
 
-On Mac
+> `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
+
+#### On Mac
 ```sh
 brew install pyenv-virtualenv
 ```
 
-On Linux (Debian)
+#### On Linux (Debian)
 ```sh
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
@@ -31,8 +33,6 @@ eval "$(pyenv virtualenv-init -)"
 
 source ~/.zshrc
 ```
-
-> `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
 
 Configure a [Python 3](https://www.python.org/download/releases/3.0/) env
 ```sh
