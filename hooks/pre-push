@@ -12,11 +12,12 @@ if [[ $(git log -1 --format=%s | grep -E "^ci: ") ]]; then
     exit 0
 fi
 
-echo -e "${PINK}=== Running pre-push hook"
+echo -e "${PINK}=== Running pre-push hook${CYAN}"
 
 if [[ $(git diff --name-status $current_branch "origin/$current_branch" -- $watch_files) ]]; then
     echo -e "${PINK}=== Changes to [$watch_files], deploying${CYAN}"
     make deploy
+    make update-build-version
 else
     echo -e "${PINK}=== No changes to [$watch_files], continue${CYAN}"
 fi
