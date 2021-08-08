@@ -30,7 +30,7 @@ deploy:
 	cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
 		&& git reset --hard
-	git pull --recurse-submodules
+	git pull --recurse-submodules --no-rebase --ff
 
 .PHONY: serve
 serve:
