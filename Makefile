@@ -9,13 +9,14 @@ PINK := \033[0;35m
 install:
 	@echo -e "${PINK}=== Installing requirements"
 	@echo -en "${CYAN}"
-	pip install -r requirements.txt
+	pip install --upgrade pip \
+		&& pip install -r requirements.txt
 	@echo -e "${PINK}=== Configuring hooks"
 	@echo -en "${CYAN}"
 	git config --local core.hooksPath hooks
 	@echo -e "${PINK}=== Checking out submodules"
 	@echo -en "${CYAN}"
-	git pull --recurse-submodules
+	git submodule update --init
 	@echo -e "${PINK}=== Done."
 
 .PHONY: build
@@ -26,8 +27,10 @@ build:
 .PHONY: deploy
 deploy:
 	@echo -en "${CYAN}"
-	./run-deploy.sh
-	git pull --recurse-submodules --ff
+	cd ar2pi.github.io \
+		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
+		&& git reset --hard
+	git pull --recurse-submodules
 
 .PHONY: serve
 serve:
