@@ -6,11 +6,11 @@ Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://g
 
 > `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
 
+---
 #### On Mac
 ```sh
 brew install pyenv-virtualenv
 ```
-
 #### On Linux (Debian)
 ```sh
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
@@ -19,6 +19,7 @@ sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g
 
 curl https://pyenv.run | bash
 ```
+---
 
 ```sh
 echo '''
