@@ -34,7 +34,7 @@ source ~/.zshrc
 
 > `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
 
-Install a [Python 3](https://www.python.org/download/releases/3.0/) env
+Configure a [Python 3](https://www.python.org/download/releases/3.0/) env
 ```sh
 # list possible python versions
 pyenv install --list | grep 3.9 | less
