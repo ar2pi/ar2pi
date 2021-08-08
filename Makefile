@@ -30,8 +30,9 @@ deploy:
 	cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml
 	git submodule update --remote --merge \
-		&& git add ar2pi.github.io
-		&& git commit -m "update build version"
+		&& git add ar2pi.github.io \
+		&& git commit -m "ci: update build version" \
+		&& git push
 
 .PHONY: serve
 serve:
