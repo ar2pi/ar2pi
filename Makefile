@@ -29,7 +29,9 @@ deploy:
 	@echo -en "${CYAN}"
 	cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml
-	git pull --recurse-submodules --no-rebase --ff
+	git submodule update --remote --merge \
+		&& git add ar2pi.github.io
+		&& git commit -m "update build version"
 
 .PHONY: serve
 serve:
