@@ -1,10 +1,11 @@
-.SHELLFLAGS: -ceu
-
 SHELL := /bin/bash
 NOCOLOR := \033[0m
 CYAN := \033[0;36m
 PINK := \033[0;35m
 
+.SHELLFLAGS: -ceu
+
+.PHONY: install
 install:
 	@echo -e "${PINK}=== Installing requirements"
 	@echo -en "${CYAN}"
@@ -17,17 +18,20 @@ install:
 	git pull --recurse-submodules
 	@echo -e "${PINK}=== Done."
 
+.PHONY: build
 build:
 	@echo -en "${CYAN}"
 	mkdocs build
 
+.PHONY: deploy
 deploy:
 	@echo -en "${CYAN}"
-	cd ar2pi.github.io \
+	$(cd ar2pi.github.io \
 		&& mkdocs gh-deploy --config-file ../mkdocs.yml \
-		&& git reset --hard
+		&& git reset --hard)
 	git pull --recurse-submodules
 
+.PHONY: serve
 serve:
 	@echo -en "${CYAN}"
 	mkdocs serve
