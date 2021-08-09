@@ -1,4 +1,4 @@
-# Linux
+# Linux (Debian)
 
 ## Get current release version
 
