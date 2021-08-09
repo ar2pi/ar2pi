@@ -11,6 +11,7 @@ nav:
   - About: index.md
   - Python: python.md
   - Linux: linux.md
+  - Git: git.md
   - Network: network.md
 
 theme:
