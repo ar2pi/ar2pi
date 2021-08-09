@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+GH_PAGE := ar2pi.github.io
 
 .SHELLFLAGS: -ceu
 
@@ -19,13 +20,12 @@ serve:
 
 .PHONY: deploy
 deploy:
-	cd ar2pi.github.io \
-		&& mkdocs gh-deploy --config-file ../mkdocs.yml
+	cd $(GH_PAGE) && mkdocs gh-deploy --config-file ../mkdocs.yml
 
 .PHONY: update-build-version
 update-build-version:
 	git submodule update --remote --merge
-	git add ar2pi.github.io
+	git add $(GH_PAGE)
 	git commit -m "ci: update build version"
 
 .PHONY: publish
