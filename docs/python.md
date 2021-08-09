@@ -35,38 +35,36 @@ eval "$(pyenv virtualenv-init -)"
 source ~/.zshrc
 ```
 
-Configure a [Python 3](https://www.python.org/download/releases/3.0/) env:
+## Configure a [Python 3](https://www.python.org/download/releases/3.0/) virtualenv
+
 ```sh
-# list possible python versions
-pyenv install --list | grep 3.9 | less
-# install a python version
-pyenv install 3.9.6
+pyenv install --list | grep 3.9 | less # list possible python versions
 
-# create a new virtualenv
-pyenv virtualenv 3.9.6 python3
-# activate a virtualenv
-pyenv activate python3
-# deactivate a virtualenv
-pyenv deactivate
-
-# path to python executable
-pyenv which python
-# list available virtualenvs
-pyenv virtualenvs
-
-# delete existing virtualenv
-pyenv uninstall python3
+pyenv install 3.9.6 # install a python version
+pyenv virtualenv 3.9.6 python3 # create a new virtualenv
+pyenv activate python3 # activate virtualenv
 ```
 
-## Generate a .python-version file
+Other useful `pyenv` commands:
+```sh
+pyenv deactivate # deactivate current virtualenv
 
-`.python-version` is used by `pyenv-virtualenv` to automatically switch to correct env.
+pyenv versions # list installed python versions and available virtualenvs
+pyenv which python # see path to python executable
+pyenv version-name # see current virtualenv
+
+pyenv uninstall python3 # remove virtualenv / python version
+```
+
+## Generate a `.python-version` file
 
 ```sh
 pyenv version-name > .python-version 
 ```
 
-## Generate a requirements.txt file
+`.python-version` is then used by `pyenv-virtualenv` to automatically switch to correct virtualenv.
+
+## Generate a `requirements.txt` file
 
 ```sh
 # create a new virtualenv
@@ -85,4 +83,4 @@ pip install -r requirements.txt
 
 ## Containerized Python development
 
-- [Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
+- [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
