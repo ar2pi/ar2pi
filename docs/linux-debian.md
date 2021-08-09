@@ -26,7 +26,7 @@ sudo chmod 440 /etc/sudoers.d/username
 PATH=$PATH:/path/to/bin
 ```
 
-## Adding an additional PPA for newer or extra packages
+## Add an additional PPA for newer or extra packages
 
 ```sh
 # https://launchpad.net/~git-core/+archive/ubuntu/ppa

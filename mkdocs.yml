@@ -10,9 +10,9 @@ remote_branch: main
 nav:
   - About: index.md
   - Python: python.md
-  - Linux (Debian): linux-debian.md
   - Git: git.md
   - Network: network.md
+  - Linux (Debian): linux-debian.md
 
 theme:
   name: readthedocs
