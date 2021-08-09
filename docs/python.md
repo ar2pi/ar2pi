@@ -4,7 +4,7 @@
 
 Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv). Respectively for Python version management and virtualenvs management. 
 
-> `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not.
+> `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not
 
 ---
 #### On Mac
@@ -35,7 +35,7 @@ eval "$(pyenv virtualenv-init -)"
 source ~/.zshrc
 ```
 
-Configure a [Python 3](https://www.python.org/download/releases/3.0/) env
+Configure a [Python 3](https://www.python.org/download/releases/3.0/) env:
 ```sh
 # list possible python versions
 pyenv install --list | grep 3.9 | less
