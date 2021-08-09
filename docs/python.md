@@ -67,12 +67,9 @@ pyenv version-name > .python-version
 ## Generate a `requirements.txt` file
 
 ```sh
-# create a new virtualenv
-pyenv virtualenv 3.9.6 NAME
-# install dependencies 
-pip install DEPENDENCY_1 DEPENDENCY_2
-# freeze requirements
-pip freeze > requirements.txt
+pyenv virtualenv 3.9.6 NAME # create a new virtualenv
+pip install DEPENDENCY_1 DEPENDENCY_2 # install dependencies
+pip freeze > requirements.txt # freeze requirements
 ```
 
 ## Install dependencies from a requirements.txt file
