@@ -24,7 +24,7 @@ deploy:
 
 .PHONY: update-build-version
 update-build-version:
-	git submodule update --remote --merge
+	git submodule update --remote --checkout
 	git add $(GH_PAGE)
 	git commit -m "ci: update build version"
 
