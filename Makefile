@@ -20,11 +20,11 @@ serve:
 
 .PHONY: deploy
 deploy:
-	cd $(GH_PAGE) && mkdocs gh-deploy --config-file ../mkdocs.yml
+	cd $(GH_PAGE) && mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch main
 
 .PHONY: update-build-version
 update-build-version:
-	git submodule update --remote --merge
+	git submodule update --remote --checkout
 	git add $(GH_PAGE)
 	git commit -m "ci: update build version"
 
