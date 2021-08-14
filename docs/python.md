@@ -1,5 +1,10 @@
 # Python
 
+## Docs
+
+- [The Python Language Reference](https://docs.python.org/3/reference/index.html)
+- [The Python Standard Library](https://docs.python.org/3/library/index.html)
+
 ## Local setup
 
 Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv). Respectively for Python version management and virtualenvs management. 
@@ -81,3 +86,63 @@ pip install -r requirements.txt
 ## Containerized Python development
 
 - [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
+
+## Snippets
+
+### Performance counter 
+
+[time.perf_counter()](https://docs.python.org/3/library/time.html#time.perf_counter)
+
+```python
+import time
+start = time.perf_counter()
+# ...
+end = time.perf_counter()
+print('timing: {time}'.format(time=(end - start)))
+```
+
+
+### Interning 
+
+```python
+a = 10
+b = int('1010', 2)
+print(hex(id(a)))
+print(hex(id(b)))
+a is b # True, in [-5, 256]
+
+a = 500
+b = 500
+a is b # False
+```
+
+String interning: don't do this unless optimization is needed
+```python
+import sys
+a = 'foo'
+b = 'foo'
+a is b # True, looks like an identifier so gets interned... but don't count on it
+
+a = 'foo bar'
+b = 'foo bar'
+a is b # False
+
+a = sys.intern('foo bar')
+b = sys.intern('foo bar')
+a is b # True
+```
+
+### Peephole 
+
+```python
+def my_func():
+    a = 24 * 60
+    b = 'foo'
+    c = 'foo' * 2
+    d = ['foo', 'bar']
+    e = ('foo', 'bar')
+    f = {'foo', 'bar'}
+
+print(my_func.__code__.co_consts) 
+# (None, 24, 60, 'foo', 2, 'bar', 1440, 'foofoo', ('foo', 'bar'))
+```
