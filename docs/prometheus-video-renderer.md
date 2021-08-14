@@ -102,9 +102,14 @@ ffmpeg -framerate 30 -i '%06d.png' \
 
 Open `video/grafanyan_cat.mp4` and enjoy ^_^
 
+Example output:
+<p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vvJUK9HOKQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 ## Resources
 
-- https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies/
-- https://github.com/MacroPower/grafana-image-renderer-sdk-go
-- https://github.com/grafana/grafana-image-renderer
-- https://golangexample.com/plays-videos-using-prometheus-e-g-bad-apple/ 
+- [https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies/](https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies/)
+- [https://giedrius.blog/2019/09/21/is-it-a-good-idea-to-use-prometheus-for-storing-ascii-paintings/](https://giedrius.blog/2019/09/21/is-it-a-good-idea-to-use-prometheus-for-storing-ascii-paintings/)
+- [https://github.com/MacroPower/grafana-image-renderer-sdk-go](https://github.com/MacroPower/grafana-image-renderer-sdk-go)
+- [https://github.com/grafana/grafana-image-renderer](https://github.com/grafana/grafana-image-renderer)
