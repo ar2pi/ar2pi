@@ -12,6 +12,7 @@ nav:
   - Python: python.md
   - Git: git.md
   - Network: network.md
+  - Prometheus Video Renderer: prometheus-video-renderer.md
   - Linux (Debian): linux-debian.md
 
 theme:
