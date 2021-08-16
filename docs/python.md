@@ -1,10 +1,5 @@
 # Python
 
-## Docs
-
-- [The Python Language Reference](https://docs.python.org/3/reference/index.html)
-- [The Python Standard Library](https://docs.python.org/3/library/index.html)
-
 ## Local setup
 
 Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv). Respectively for Python version management and virtualenvs management. 
@@ -83,6 +78,11 @@ pip freeze > requirements.txt # freeze requirements
 pip install -r requirements.txt
 ```
 
+## Docs
+
+- [The Python Language Reference](https://docs.python.org/3/reference/index.html)
+- [The Python Standard Library](https://docs.python.org/3/library/index.html)
+
 ## Containerized Python development
 
 - [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
@@ -106,7 +106,7 @@ print('timing: {time}'.format(time=(end - start)))
 ```python
 import ctypes
 def ref_count(address):
-		return ctypes.c_long.from_address(address).value
+    return ctypes.c_long.from_address(address).value
 ```
 
 ### Interning 

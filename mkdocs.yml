@@ -10,6 +10,7 @@ remote_branch: main
 nav:
   - About: index.md
   - Python: python.md
+  - Go: go.md
   - Git: git.md
   - Network: network.md
   - Prometheus Video Renderer: prometheus-video-renderer.md
