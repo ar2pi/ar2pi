@@ -13,7 +13,7 @@ cat <<EOF >> ~/.zshrc
 # go
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
-export PATH="$GOBIN:$PATH"
+export PATH=$PATH:$GOBIN
 EOF
 ```
 #### On Linux (Debian)
