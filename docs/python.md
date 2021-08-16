@@ -101,6 +101,13 @@ end = time.perf_counter()
 print('timing: {time}'.format(time=(end - start)))
 ```
 
+### Reference count
+
+```python
+import ctypes
+def ref_count(address):
+		return ctypes.c_long.from_address(address).value
+```
 
 ### Interning 
 
