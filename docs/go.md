@@ -25,8 +25,7 @@ rm -rvf go1.17.linux-amd64.tar.gz
 
 cat <<EOF >> ~/.zshrc 
 # go
-export GOPATH=/usr/local/go
-export GOBIN=$GOPATH/bin
+export GOBIN=/usr/local/go/bin
 export PATH=$PATH:$GOBIN
 EOF
 ```

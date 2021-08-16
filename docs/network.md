@@ -24,3 +24,26 @@ ip addr show enp4s0 | grep -oE "inet6 ([^/]+)" | cut -d " " -f 2
 ```sh
 curl ifconfig.me/ip
 ```
+
+## netcat 
+
+### TCP
+```sh
+# sh 1
+nc -l 3456
+# sh 2
+nc localhost 3456
+# type in 'hello world'
+```
+Open http://localhost:3456 and look at request headers sent to `sh 1`
+
+### HTTP w/ netcat
+```sh
+printf 'GET / HTTP/1.1\r\nHost: ar2pi.github.com\r\n\r\n' | nc -N ar2pi.github.com 80 > response.html
+```
+
+### Redirect through netcat
+```sh
+printf 'HTTP/1.1 302 Moved\r\nLocation: https://docs.ar2pi.net/' | nc -N -l 3456
+```
+Open http://localhost:3456 and witness redirect
