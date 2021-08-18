@@ -19,10 +19,29 @@ ip addr show enp4s0 | grep -oE "inet6 ([^/]+)" | cut -d " " -f 2
 ```
 ---
 
+## Show default gateway
+
+---
+#### On Mac
+```sh
+netstat -nr
+```
+#### On Linux (Debian)
+```sh
+ip route show default
+```
+---
+
 ## Show public IP address
 
 ```sh
 curl ifconfig.me/ip
+```
+
+## Show DNS records
+
+```sh
+dig docs.ar2pi.net +nostats +nocomments +nocmd
 ```
 
 ## netcat 
