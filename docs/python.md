@@ -157,3 +157,27 @@ def my_func():
 print(my_func.__code__.co_consts) 
 # (None, 24, 60, 'foo', 2, 'bar', 1440, 'foofoo', ('foo', 'bar'))
 ```
+
+### Unpacking magic
+
+#### Remove list duplicates
+
+```python
+a = [1, 1, 2, 2, 3, 3]
+a = [*a] = {*a} # a = [1, 2, 3]
+```
+
+#### Overwrite dictionary values
+
+```python
+a = {'foo': 'bar', 'baz': 'qux'}
+b = {'foo': 'quux', 'quuz': 'courge'}
+b = {**a, **b} # b = {'foo': 'quux', 'baz': 'qux', 'quuz': 'courge'}
+```
+
+#### Nested unpacking
+
+```python
+a, *b, (c, d, e) = [1, 2, 3, 'XYZ']
+# a = 1, b = [2, 3], c = 'X', d = 'Y', e = 'Z'
+```
