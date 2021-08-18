@@ -34,3 +34,12 @@ EOF
 ```sh
 source ~/.zshrc 
 ```
+
+## Docs
+
+- [The Go Programming Language Specification](https://golang.org/ref/spec)
+- [The Go Standard Library](https://pkg.go.dev/std)
+
+## Package registry
+
+- [Go Packages](https://pkg.go.dev/)

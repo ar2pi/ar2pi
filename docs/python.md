@@ -89,6 +89,10 @@ help(set)
 - [The Python Language Reference](https://docs.python.org/3/reference/index.html)
 - [The Python Standard Library](https://docs.python.org/3/library/index.html)
 
+## Package registry
+
+- [PyPi](https://pypi.org/)
+
 ## Containerized Python development
 
 - [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
