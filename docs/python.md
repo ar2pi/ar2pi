@@ -89,6 +89,10 @@ pip install -r requirements.txt
 
 ## Snippets
 
+```sh
+#!/usr/bin/env python
+```
+
 ### Performance counter 
 
 [time.perf_counter()](https://docs.python.org/3/library/time.html#time.perf_counter)
