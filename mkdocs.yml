@@ -13,7 +13,7 @@ nav:
   - Python: python.md
   - Bash: bash.md
   - Git: git.md
-  - Network: network.md
+  - Networking: networking.md
   - Prometheus Video Renderer: prometheus-video-renderer.md
   - Linux (Debian): linux-debian.md
 

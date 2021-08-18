@@ -1,4 +1,4 @@
-# Network
+# Networking
 
 ## Show internal IP address
 
@@ -66,3 +66,13 @@ printf 'GET / HTTP/1.1\r\nHost: ar2pi.github.com\r\n\r\n' | nc -N ar2pi.github.c
 printf 'HTTP/1.1 302 Moved\r\nLocation: https://docs.ar2pi.net/' | nc -N -l 3456
 ```
 Open http://localhost:3456 and witness redirect
+
+## tcpdump
+
+###
+```sh
+# sh 1
+sudo tcpdump -n port 80
+# sh 2
+printf 'GET / HTTP/1.1\r\nHost: ar2pi.github.com\r\n\r\n' | nc -N ar2pi.github.com 80
+```
