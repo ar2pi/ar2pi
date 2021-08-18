@@ -36,7 +36,6 @@ if [[ $current_branch != $main_branch ]]; then
     exit 0
 fi
 
-
 out "Running post-merge hook"
 
 out "Updating submodules"
