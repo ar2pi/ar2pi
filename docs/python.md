@@ -158,13 +158,13 @@ print(my_func.__code__.co_consts)
 # (None, 24, 60, 'foo', 2, 'bar', 1440, 'foofoo', ('foo', 'bar'))
 ```
 
-### Unpacking magic
+### Unpacking zen
 
 #### Remove list duplicates
 
 ```python
 a = [1, 1, 2, 2, 3, 3]
-a = [*a] = {*a} # a = [1, 2, 3]
+*a, = {*a} # a = [1, 2, 3]
 ```
 
 #### Overwrite dictionary values
