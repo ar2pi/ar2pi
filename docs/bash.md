@@ -2,6 +2,10 @@
 
 ## Snippets
 
+```sh
+#!/usr/bin/env bash
+```
+
 ### Log function
 
 ```bash

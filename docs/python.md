@@ -78,6 +78,12 @@ pip freeze > requirements.txt # freeze requirements
 pip install -r requirements.txt
 ```
 
+## Consult object help
+
+```python
+help(set)
+```
+
 ## Docs
 
 - [The Python Language Reference](https://docs.python.org/3/reference/index.html)
