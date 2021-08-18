@@ -5,7 +5,7 @@
 Render videos in Grafana through Prometheus metrics.  
 [MacroPower/prometheus_video_renderer](https://github.com/MacroPower/prometheus_video_renderer)
 
-## Step by step
+## How we do it
 
 ### Install dependencies
 
