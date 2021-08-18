@@ -65,7 +65,7 @@ printf 'GET / HTTP/1.1\r\nHost: ar2pi.github.com\r\n\r\n' | nc -N ar2pi.github.c
 ```sh
 printf 'HTTP/1.1 302 Moved\r\nLocation: https://docs.ar2pi.net/' | nc -N -l 3456
 ```
-Open http://localhost:3456 and witness redirect
+Open [http://localhost:3456](http://localhost:3456) and witness redirect
 
 ## tcpdump
 
