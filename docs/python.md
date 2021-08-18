@@ -95,9 +95,7 @@ help(set)
 
 ## Snippets
 
-```sh
-#!/usr/bin/env python
-```
+**`#!/usr/bin/env python`**
 
 ### Performance counter 
 
