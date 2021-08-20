@@ -6,7 +6,7 @@ Site Reliability Engineer at [adidas](https://www.adidas.com/). In the past, I w
 - [GitHub](https://github.com/ar2pi)
 - [GitLab](https://gitlab.com/ar2pi)
 - [Twitter](https://twitter.com/ar2pi) 
-- [Instagram](https://www.instagram.com/a_r2pi/) 
+- [Instagram](https://www.instagram.com/ar2pi/) 
 - [Linkedin](https://www.linkedin.com/in/arthurpicerna/) 
 
 ![ar2pi's GitHub stats](https://github-readme-stats.vercel.app/api?username=ar2pi&show_icons=true&theme=radical)
