@@ -2,7 +2,7 @@
 
 Site Reliability Engineer at [adidas](https://www.adidas.com/). In the past, I worked at [Huge](https://www.hugeinc.com/), [Prodigious](https://www.prodigious.com/) and [Aviatur](https://www.aviatur.com/).
 
-- Email: [arthurpicerna@gmail.com](mailto:arthurpicerna@gmail.com)
+- Email: [hello@ar2pi.net](mailto:hello@ar2pi.net)
 - [GitHub](https://github.com/ar2pi)
 - [GitLab](https://gitlab.com/ar2pi)
 - [Twitter](https://twitter.com/ar2pi) 
