@@ -1,4 +1,4 @@
 [submodule "ar2pi.github.io"]
-	path = ar2pi.github.io
-	url = git@github.com:ar2pi/ar2pi.github.io.git
+  path = ar2pi.github.io
+  url = git@github.com:ar2pi/ar2pi.github.io.git
   branch = main
