@@ -3,12 +3,13 @@
 ## Install
 
 [golang.org/doc/install](https://golang.org/doc/install)  
-[goenv](https://github.com/syndbg/goenv)
+[goenv](https://github.com/syndbg/goenv)  
+[bingo](https://github.com/bwplotka/bingo)
 
 ---
 #### On Mac
 ```sh
-brew install goenv
+brew install goenv # seems outdated, no latest go versions listed
 ```
 #### On Linux (Debian)
 ```sh
