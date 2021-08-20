@@ -26,7 +26,7 @@ deploy:
 update-build-version:
 	git submodule update --remote --checkout
 	git add $(GH_PAGE)
-	git commit -m "ci: update build version"
+	git commit --author "<bot@ar2pi.net>" -m "ci: update build version"
 
 .PHONY: publish
 publish: deploy update-build-version
