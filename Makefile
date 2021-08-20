@@ -9,6 +9,8 @@ install:
 	pip install -r requirements.txt
 	git config --local core.hooksPath hooks
 	git submodule update --init
+	cd $(GH_PAGE) && git config --local user.name "🤖"
+	cd $(GH_PAGE) && git config --local user.email "bot@ar2pi.net"
 
 .PHONY: build
 build:
@@ -26,7 +28,7 @@ deploy:
 update-build-version:
 	git submodule update --remote --checkout
 	git add $(GH_PAGE)
-	git commit --author "<bot@ar2pi.net>" -m "ci: update build version"
+	git -c user.name="🤖" -c user.email="bot@ar2pi.net" commit --author "🤖 <bot@ar2pi.net>" -m "ci: update build version"
 
 .PHONY: publish
 publish: deploy update-build-version
