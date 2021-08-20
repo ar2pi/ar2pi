@@ -81,3 +81,15 @@ printf 'GET / HTTP/1.1\r\nHost: ar2pi.github.com\r\n\r\n' | nc -N ar2pi.github.c
 ```sh
 traceroute -T -p 80 ar2pi.github.com
 ```
+
+## nmap
+
+```sh
+sudo nmap -sS -p 8000 -Pn -n --open 192.168.0.13/24
+```
+
+## socat
+
+```sh
+socat tcp-listen:8001,reuseaddr,fork tcp:192.168.0.1:8000
+```
