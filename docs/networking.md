@@ -44,6 +44,12 @@ curl ifconfig.me/ip
 dig docs.ar2pi.net +nostats +nocomments +nocmd
 ```
 
+## Show open ports
+
+```sh
+lsof -i :8000 | grep "(LISTEN)" # list processes listening on port 8000
+```
+
 ## netcat 
 
 ### TCP
