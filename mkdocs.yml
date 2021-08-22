@@ -11,7 +11,7 @@ nav:
   - About: index.md
   - Go: go.md
   - Python: python.md
-  - Bash: bash.md
+  - Bash scripting: bash-scripting.md
   - Git: git.md
   - Networking: networking.md
   - Prometheus Video Renderer: prometheus-video-renderer.md

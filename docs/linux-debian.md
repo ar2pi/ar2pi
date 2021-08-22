@@ -51,13 +51,41 @@ sudo du --max-depth=1 -ax --si --time /
 ```
 Note that `-x` will exclude `/dev`, `/proc`, `/run`, `sys` since these are pseudo-filesystems which exist in memory only.
 
+### Find files
+
+```sh
+find ~/Downloads -maxdepth 1 -type f -name "*.mp3"
+```
+
+### List open files
+
+```sh
+sudo lsof -a -u r2 -c spotify -p ^9365 -d 0-$(ulimit -S -n) +D /usr | grep -E "REG|DIR" | less
+# get all files / directories under /usr open with an actual file descriptor number by user r2, comand `spotify`, except process 9365
+```
+
+FD mode
+```
+r for read access;
+w for write access;
+u for read and write access;
+```
+
+TYPE
+```
+REG for a directory;
+DIR for a regular file;
+```
+
 ## Processes
 
 ### List processes
 
 ```sh
+top
 ps aux
-pgrep [-a|-l] -u r2 # list all processes by user 'r2'
+ps axjf # show process tree
+pgrep -a -u r2 # list all processes by user 'r2'
 ```
 
 ### ulimit
@@ -82,6 +110,7 @@ ps aux | grep -wE -e "2753" -e "851" # see info on processes
 ```sh
 for i in {1..31}; do; echo "$i: $(kill -l $i)"; done
 kill -9 PID
+kill -9 $(pgrep -u r2) # kill all processes by user r2
 killall -9 PROCESS_NAME
 ```
 

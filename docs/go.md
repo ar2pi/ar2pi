@@ -33,6 +33,7 @@ source ~/.zshrc
 ## Install a Go version
 
 ```sh
+goenv install --list # list go versions
 goenv install 1.17 # install a go version
 goenv global 1.17.0 # set default global go version
 goenv local 1.17.0 # set project version in .go-version file
