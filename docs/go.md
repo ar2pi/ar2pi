@@ -30,11 +30,11 @@ EOF
 source ~/.zshrc 
 ```
 
-## Install a Go version
+## Configure a Go env
 
 ```sh
 goenv install --list # list go versions
-goenv install 1.17 # install a go version
+goenv install 1.17.0 # install a go version
 goenv global 1.17.0 # set default global go version
 goenv local 1.17.0 # set project version in .go-version file
 ```
@@ -42,6 +42,7 @@ goenv local 1.17.0 # set project version in .go-version file
 Other useful `goenv` commands:
 ```sh
 goenv version # show current go version
+goenv versions # show installed go versions
 ```
 
 ## Docs
