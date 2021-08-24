@@ -107,3 +107,32 @@ sudo sh -c "curl -sSL -o - http://winhelp2002.mvps.org/hosts.txt >> /etc/hosts"
 ```
 
 Gist: [https://gist.github.com/ar2pi/25d7ffc31cb1695bef557556ded182fe](https://gist.github.com/ar2pi/25d7ffc31cb1695bef557556ded182fe)
+
+### Iterate over hash table (associative array)
+
+#### bash
+
+Bash 3
+```bash
+declare -a arr
+# ...
+```
+
+Bash 4
+```bash
+declare -A arr
+arr=([foo]=bar [baz]=qux)
+for key in ${!arr[@]}; do 
+  echo "$key: $arr[$key]"
+done
+```
+
+#### zsh
+
+```zsh
+declare -A arr
+arr=([foo]=bar [baz]=qux)
+for key value in ${(kv)arr}; do 
+  echo "$key: $value"
+done
+```
