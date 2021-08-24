@@ -14,6 +14,7 @@ nav:
   - Bash scripting: bash-scripting.md
   - Git: git.md
   - Networking: networking.md
+  - Kubernetes: kubernetes.md
   - Prometheus Video Renderer: prometheus-video-renderer.md
   - Linux (Debian): linux-debian.md
 
