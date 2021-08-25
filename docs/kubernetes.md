@@ -23,3 +23,11 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v$version/bin
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
+
+## Snippets
+
+### Output resource yaml
+
+```sh
+kubectl [COMMAND] --dry-run=client -o yaml > resource.yaml
+```
