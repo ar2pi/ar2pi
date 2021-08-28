@@ -112,18 +112,28 @@ Gist: [https://gist.github.com/ar2pi/25d7ffc31cb1695bef557556ded182fe](https://g
 
 #### bash
 
-Bash 3
+##### bash v3
+
 ```bash
-declare -a arr
-# ...
+function key_val () {
+    case $1 in
+        "foo") echo "bar";;
+        "baz") echo "qux";;
+        *) echo "default";;
+    esac
+}
+for key in "foo" "baz"; do
+    echo "$key: $(key_val $key)"
+done
 ```
 
-Bash 4
+##### bash v4
+
 ```bash
 declare -A arr
 arr=([foo]=bar [baz]=qux)
 for key in ${!arr[@]}; do 
-  echo "$key: $arr[$key]"
+    echo "$key: ${arr[$key]}"
 done
 ```
 
@@ -133,6 +143,6 @@ done
 declare -A arr
 arr=([foo]=bar [baz]=qux)
 for key value in ${(kv)arr}; do 
-  echo "$key: $value"
+    echo "$key: $value"
 done
 ```
