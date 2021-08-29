@@ -108,6 +108,151 @@ sudo sh -c "curl -sSL -o - http://winhelp2002.mvps.org/hosts.txt >> /etc/hosts"
 
 Gist: [https://gist.github.com/ar2pi/25d7ffc31cb1695bef557556ded182fe](https://gist.github.com/ar2pi/25d7ffc31cb1695bef557556ded182fe)
 
+### Get current script directory and filename
+
+```bash
+CURRENT_SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]}) # Relative path
+CURRENT_SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd) # Absolute path
+CURRENT_SCRIPT_FILE=$(basename ${BASH_SOURCE[0]})
+```
+
+### Default variable value
+
+```bash
+${var:-"default"}
+```
+
+See [POSIX spec](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_06_02)
+
+### Parse arguments
+
+```bash
+# single argument flag
+if [[ ! -z ${1+_} && ($1 = "-v" || $1 = "--verbose") ]]; then
+    is_verbose=1
+fi
+
+# single argument with value
+if [[ ! -z ${1+_} && ($1 = "-n" || $1 = "--name") ]]; then
+    name=$2
+fi
+
+# multiple args, with positional support
+positional_args=()
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        "-n"|"--name") name=$2; shift;;
+        "-v"|"--verbose") is_verbose=1;;
+        *) positional_args+=($1); shift;;
+    esac
+    shift
+done
+```
+
+#### Bash command line argument parser
+
+```bash
+#!/usr/bin/env bash
+
+#
+# An over-engineered bash argument parser
+# Inspired from *args and **kwargs in Python
+#
+# Usage:
+#   parse_args "$@"
+#
+# Examples:
+#   script.sh 10 20
+#     args: [10, 20]
+#     kwargs: []
+#   script.sh --foo bar --baz qux 10 20
+#     args: [10, 20]
+#     kwargs: [foo: bar, baz: qux]
+#   script.sh -x 3 -y 2 -z -- 10 20
+#     args: [10, 20]
+#     kwargs: [x: 3, y: 2, z: 1]
+#
+
+declare -a args
+declare -A kwargs
+
+function is_value () {
+    if [[ $(echo $1 | grep -cE "^-") = 0 ]]; then
+        return 0
+    fi
+    return 1
+}
+
+function parse_args () {
+    local arg
+    local value
+
+    while [[ $# -gt 0 ]]; do
+        if [[ $1 = "--" ]]; then
+            shift; continue
+        elif $(is_value $1); then
+            arg=$1
+        else
+            arg=$(echo $1 | sed -nE "s/--?(.*)/\1/p")
+        fi
+
+        if [[ ! -z ${2+_} ]] && $(is_value $2) && ! $(is_value $1); then
+            kwargs[$arg]=$2
+            shift
+        elif ! $(is_value $1); then
+            kwargs[$arg]=1
+        else
+            args+=($arg)
+        fi
+        shift
+    done
+}
+```
+
+Gist: [https://gist.github.com/ar2pi/0d61686e9c16671a39197139588e94c1](https://gist.github.com/ar2pi/0d61686e9c16671a39197139588e94c1)
+
+### Load other bash files
+
+```bash
+[[ -f /path/to/script.sh ]] && . /path/to/script.sh
+```
+
+```bash
+#!/usr/bin/env bash
+
+#
+# A simple bash script to execute all adjacent scripts
+#
+# Usage:
+#   source /path/to/all.sh
+#   OR
+#   . /path/to/all.sh
+#
+# Options:
+#   -v|--verbose: verbose output
+#
+
+function main () {
+    local CURRENT_SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
+    local CURRENT_SCRIPT_FILE=$(basename ${BASH_SOURCE[0]})
+    local modules=$(ls -1 -I $CURRENT_SCRIPT_FILE $CURRENT_SCRIPT_DIR)
+    local is_verbose=$([[ ! -z ${1+_} && ($1 = "-v" || $1 = "--verbose") ]] && echo "1" || echo "0")
+
+    for module in $modules; do
+        if [[ -f $CURRENT_SCRIPT_DIR/$module ]]; then
+            . $CURRENT_SCRIPT_DIR/$module
+            if [[ $is_verbose = 1 ]]; then
+                echo "Loaded $CURRENT_SCRIPT_DIR/$module"
+            fi
+        fi
+    done
+}
+
+main "$@"
+```
+
+Gist: [https://gist.github.com/ar2pi/d19869c5ba2b2b42601124939593ae89](https://gist.github.com/ar2pi/d19869c5ba2b2b42601124939593ae89)
+
 ### Iterate over hash table (associative array)
 
 #### bash

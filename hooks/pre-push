@@ -2,45 +2,12 @@
 
 set -eu
 
-current_branch=$(git branch --show-current)
-main_branch="main"
+source $(dirname ${BASH_SOURCE[0]})/utils/all.sh
+
 watch_files="docs/ mkdocs.yml"
 
-function out () {
-    local RST="\033[0m"
-    local YELLOW="\033[0;33m"
-    local MAGENTA="\033[0;35m"
-    local CYAN="\033[0;36m"
-    local LIGHT_YELLOW="\033[0;93m"
-    local LIGHT_MAGENTA="\033[0;95m"
-    local LIGHT_CYAN="\033[0;96m"
-
-    local msg=$1
-    local color_1=$CYAN
-    local color_2=$LIGHT_CYAN
-
-    if [[ $1 == "warn" ]]; then
-        msg=$2
-        color_1=$YELLOW
-        color_2=$LIGHT_YELLOW
-    elif [[ $1 == "error" ]]; then
-        msg=$2
-        color_1=$MAGENTA
-        color_2=$LIGHT_MAGENTA
-    fi
-
-    echo -e "${color_1}❯${color_2} $msg${RST}"
-}
-
-if [[ $current_branch != $main_branch ]]; then
-    # don't execute on anything other than main branch
-    exit 0
-fi
-
-if [[ $(git log -1 --format=%s | grep -E "^ci: ") ]]; then
-    # don't execute if last commit starts with 'ci: '
-    exit 0
-fi
+exit_if_not_main_branch
+exit_if_ci
 
 out "Running pre-push hook"
 
