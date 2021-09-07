@@ -101,6 +101,19 @@ help(set)
 
 **`#!/usr/bin/env python`**
 
+### Parse arguments
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-v', '--verbose', action='store_true')
+parser.add_argument('-i', '--requests-interval', type=float, default=5)
+args = parser.parse_args()
+
+print(args.verbose, args.requests_interval)
+```
+
 ### Performance counter 
 
 [time.perf_counter()](https://docs.python.org/3/library/time.html#time.perf_counter)
