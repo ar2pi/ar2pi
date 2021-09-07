@@ -15,7 +15,7 @@
 function main () {
     local CURRENT_SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
     local CURRENT_SCRIPT_FILE=$(basename ${BASH_SOURCE[0]})
-    local modules=$(ls -1 -I $CURRENT_SCRIPT_FILE $CURRENT_SCRIPT_DIR)
+    local modules=$(ls -1 $CURRENT_SCRIPT_DIR | grep -v $CURRENT_SCRIPT_FILE)
     local is_verbose=$([[ ! -z ${1+_} && ($1 = "-v" || $1 = "--verbose") ]] && echo "1" || echo "0")
 
     for module in $modules; do
