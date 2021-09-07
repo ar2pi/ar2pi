@@ -114,6 +114,10 @@ args = parser.parse_args()
 print(args.verbose, args.requests_interval)
 ```
 
+Reference:
+- [https://docs.python.org/3/howto/argparse.html](https://docs.python.org/3/howto/argparse.html)
+- [https://docs.python.org/3/library/argparse.html](https://docs.python.org/3/library/argparse.html)
+
 ### Performance counter 
 
 [time.perf_counter()](https://docs.python.org/3/library/time.html#time.perf_counter)
