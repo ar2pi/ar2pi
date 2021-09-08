@@ -54,7 +54,15 @@ Note that `-x` will exclude `/dev`, `/proc`, `/run`, `sys` since these are pseud
 ### Find files
 
 ```sh
-find ~/Downloads -maxdepth 1 -type f -name "*.mp3"
+find /usr -type d -name "icons"
+ls ~/Downloads | grep .mp3
+find ~/ -maxdepth 2 -type f -name "*.mp3"
+```
+
+## Extract files
+
+```sh
+tar -xvf 02-Flat-Remix-Blue-Dark_20210620.tar.xz -C /usr/share/icons/
 ```
 
 ### List open files
