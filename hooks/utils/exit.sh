@@ -9,7 +9,7 @@ function exit_if_not_main_branch () {
 
 function exit_if_ci () {
     if [[ $(git log -1 --format=%s | grep -E "^ci: ") ]]; then
-      # don't execute if last commit starts with 'ci: '
-      exit 0
+        # don't execute if last commit starts with 'ci: '
+        exit 0
     fi
 }
