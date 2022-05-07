@@ -78,11 +78,10 @@ pip freeze > requirements.txt # freeze requirements
 pip install -r requirements.txt
 ```
 
-## Consult object help
+## Containerized Python development
 
-```python
-help(set)
-```
+- [run-python-script](https://github.com/ar2pi/run-python-script)
+- [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
 
 ## Docs
 
@@ -93,13 +92,15 @@ help(set)
 
 - [PyPi](https://pypi.org/)
 
-## Containerized Python development
-
-- [Read the Docker blog post series](https://www.docker.com/blog/tag/python-env-series/)
-
 ## Snippets
 
 **`#!/usr/bin/env python`**
+
+### Consult object help
+
+```python
+help(set)
+```
 
 ### Parse arguments
 
