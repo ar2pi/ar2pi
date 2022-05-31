@@ -8,6 +8,14 @@ Gist: [https://gist.github.com/ar2pi/41d1d0645d6437d7b69b6e7c64e88d8e](https://g
 
 **`#!/usr/bin/env {zsh,bash}`**
 
+### Get public key fingerprint
+
+```bash
+ssh-keygen -l -E sha256 -f ~/.ssh/id_ed25519
+# or
+ssh-keygen -l -E md5 -f ~/.ssh/id_rsa
+```
+
 ### Log function
 
 ```bash

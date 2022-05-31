@@ -1,6 +1,6 @@
 # Arthur Picerna (ar2pi)
 
-Site Reliability Engineer at [adidas](https://www.adidas.com/). In the past, I worked at [Huge](https://www.hugeinc.com/), [Prodigious](https://www.prodigious.com/) and [Aviatur](https://www.aviatur.com/).
+Site Reliability Engineer at [Voyager](https://www.investvoyager.com/). In the past, I worked at [adidas](https://www.adidas.com/), [Huge](https://www.hugeinc.com/), [Prodigious](https://www.prodigious.com/) and [Aviatur](https://www.aviatur.com/).
 
 - Email: [hello@ar2pi.net](mailto:hello@ar2pi.net)
 - [GitHub](https://github.com/ar2pi)
