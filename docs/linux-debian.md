@@ -26,6 +26,12 @@ sudo chmod 440 /etc/sudoers.d/username
 PATH=$PATH:/path/to/bin
 ```
 
+## Upgrade packages
+
+```sh
+sudo apt update && sudo apt upgrade && sudo apt autoremove
+```
+
 ## Add an additional PPA for newer or extra packages
 
 ```sh
@@ -38,6 +44,13 @@ deb http://ppa.launchpad.net/git-core/ppa/ubuntu/ xenial main
 curl https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xe1dd270288b4e6030699e45fa1715d88e1df1f24 | sudo apt-key add
 
 sudo apt-get update && sudo apt-get upgrade
+```
+
+## Install and hold on specific package version
+
+```sh
+apt-get install -y kubeadm=1.21.1-00 kubelet=1.21.1-00 kubectl=1.21.1-00
+apt-mark hold kubelet kubeadm kubectl
 ```
 
 ## Filesystem
