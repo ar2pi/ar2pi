@@ -28,7 +28,7 @@ See [POSIX spec](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_c
 
 #### bash
 
-##### bash v3
+**bash v3**
 
 ```bash
 function key_val () {
@@ -44,7 +44,7 @@ for key in "foo" "baz"; do
 done
 ```
 
-##### bash v4
+**bash v4**
 
 ```bash
 declare -A arr
@@ -72,8 +72,8 @@ done
 #!/bin/bash
 
 arr=(
-  "key value"
-  "foo bar"
+    "key value"
+    "foo bar"
 )
 
 for item in "${arr[@]}"; do
@@ -257,14 +257,6 @@ function out () {
 ```
 
 [Gist](https://gist.github.com/ar2pi/b0c229afe9cd5f7d02645c8c62b5e989)
-
-### Get public key fingerprint
-
-```bash
-ssh-keygen -l -E sha256 -f ~/.ssh/id_ed25519
-# or
-ssh-keygen -l -E md5 -f ~/.ssh/id_rsa
-```
 
 ### Autoload .nvmrc
 
