@@ -6,7 +6,7 @@
 cat /etc/os-release | sed -nE "s/VERSION=\"(.*)\"/\1/p"
 ```
 
-## Get Ubuntu base debian version
+## Get Ubuntu's base Debian version
 
 ```sh
 ubuntu_version=xenial
@@ -51,6 +51,18 @@ sudo apt-get update && sudo apt-get upgrade
 ```sh
 apt-get install -y kubeadm=1.21.1-00 kubelet=1.21.1-00 kubectl=1.21.1-00
 apt-mark hold kubelet kubeadm kubectl
+```
+
+## Increase max number of watched files
+
+```sh
+cat /proc/sys/fs/inotify/max_user_watches
+
+sudo vi /etc/sysctl.conf
+# add at the end of file:
+#   fs.inotify.max_user_watches=524288
+
+sudo sysctl -p
 ```
 
 ## Filesystem
