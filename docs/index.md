@@ -1,14 +1,9 @@
 # Arthur Picerna (ar2pi)
 
-Site Reliability Engineer at [Voyager](https://www.investvoyager.com/). In the past, I worked at [adidas](https://www.adidas.com/), [Huge](https://www.hugeinc.com/), [Prodigious](https://www.prodigious.com/) and [Aviatur](https://www.aviatur.com/).
+Site Reliability Engineer at [Booking.com](https://www.booking.com/).
 
 - Email: [hello@ar2pi.net](mailto:hello@ar2pi.net)
-- [GitHub](https://github.com/ar2pi)
-- [GitLab](https://gitlab.com/ar2pi)
-- [Twitter](https://twitter.com/ar2pi) 
-- [Instagram](https://www.instagram.com/ar2pi/) 
-- [Linkedin](https://www.linkedin.com/in/arthurpicerna/) 
-
-![ar2pi's GitHub stats](https://github-readme-stats.vercel.app/api?username=ar2pi&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ar2pi&layout=compact)
+- [LinkedIn](https://www.linkedin.com/in/arthurpicerna/) 
+- [Mastodon](https://mastodon.social/@ar2pi) 
+- [Discord](https://discordapp.com/users/305336666854260739) 
+- [GitHub](https://github.com/ar2pi) / [GitLab](https://gitlab.com/ar2pi)

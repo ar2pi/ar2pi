@@ -68,10 +68,10 @@ scripts/load.sh nyan_cat
 ### Visualize output
 
 Go to [http://localhost:3000/d/pvr-dash-8-rgb/prometheus-video-renderer-8-0?orgId=1&from=1628675100000&to=1628675400000](http://localhost:3000/d/pvr-dash-8-rgb/prometheus-video-renderer-8-0?orgId=1&from=1628675100000&to=1628675400000)
-![image](./images/nyan_cat.png)
+![image](../images/nyan_cat.png)
 
 Go to [http://localhost:8081/render?deviceScaleFactor=1.000000&domain=localhost&encoding=&height=1080&renderKey=TljYdA5Bp7IEU7D7rasBnwc6my7mu5hW&timeout=59&timezone=&url=http://grafana:3000/d/pvr-dash-8-rgb?from%3D1628675100000%26height%3D1080%26timeout%3D59%26to%3D1628675400000%26width%3D1920%26render%3D1&width=1920](http://localhost:8081/render?deviceScaleFactor=1.000000&domain=localhost&encoding=&height=1080&renderKey=TljYdA5Bp7IEU7D7rasBnwc6my7mu5hW&timeout=59&timezone=&url=http://grafana:3000/d/pvr-dash-8-rgb?from%3D1628675100000%26height%3D1080%26timeout%3D59%26to%3D1628675400000%26width%3D1920%26render%3D1&width=1920)
-![image](./images/nyan_cat_rendered.png)
+![image](../images/nyan_cat_rendered.png)
 
 ### Render frames through Grafana
 

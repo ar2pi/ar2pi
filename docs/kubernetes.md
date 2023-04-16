@@ -8,14 +8,41 @@
 kubectl [COMMAND] --dry-run=client -o yaml > resource.yaml
 ```
 
-### Boilerplates
+### Cheat sheet
+
+[Official docs cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ```sh
-# create nginx pod
-kubectl run nginx --image=nginx
+# create nginx pod on port 8080, with label tier=db and associated ClusterIP service 
+kubectl run nginx --image=nginx:latest --port 8080 -l tier=db --expose true
+# create nginx deployment, with 3 replicas in dev namespace
+kubectl create deploy webapp --image nginx -r 3 -n dev
+# print imperative create command options to create LoadBalancer
+kubectl create svc loadbalancer -h
 
 # generate deployment yaml file (-o yaml). Don't create it(--dry-run) with 4 replicas (--replicas=4)
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml
+
+# scale a replicaset named 'foo' to 3
+kubectl scale --replicas=3 rs/foo
+# update existing resource
+kubectl edit pod/nginx
+# terminate existing resource and recreate it (useful when edit not possible )
+kubectl replace --force -f nginx-deployment.yaml
+
+# stream all pods logs with label name=myLabel (stdout)
+kubectl logs -f -l env=dev --all-containers
+
+# count pods in env dev and app foo
+kubectl get pods -l env=dev,app=foo --no-headers | wc -l
+
+# taint node
+kubectl taint nodes node01 spray=mortein:NoSchedule
+# remove taint from node
+kubectl taint nodes node01 spray=mortein:NoSchedule-
+
+# label node
+kubectl label node/node01 color=blue
 ```
 
 ### Describe API resources
@@ -101,10 +128,16 @@ kubectl explain svc.spec.ports
 kubectl explain pods.spec.containers --recursive
 ```
 
-## List all kube-system resources
+## List cluster resources
 
 ```sh
+# list all resources
+kubectl get all -A
+# list all kube-system resources
 kubectl get all -n kube-system
+
+# watch all resources
+watch kubectl get all -A
 ```
 
 ## Change default namespace
@@ -115,8 +148,9 @@ kubectl config set-context $(kubectl config current-context) --namespace dev
 
 ## Internal DNS
 
-Within same namespace: http://{service_name}
-Between distinct namespaces: http://{service_name}.{namespace}.svc.cluster.local
+Within same namespace: `http://{service_name}`  
+
+Between distinct namespaces: `http://{service_name}.{namespace}.svc.cluster.local`
 
 ## Install kubectl
 

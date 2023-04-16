@@ -8,15 +8,19 @@ edit_uri: edit/main/docs/
 remote_branch: main
 
 nav:
-  - About: index.md
-  - Go: go.md
-  - Python: python.md
-  - Bash scripting: bash-scripting.md
-  - Git: git.md
-  - Networking: networking.md
-  - Kubernetes: kubernetes.md
-  - Prometheus Video Renderer: prometheus-video-renderer.md
-  - Linux (Debian): linux-debian.md
+  - About:
+    - index.md
+  - Cheatsheets:
+    - Go: go.md
+    - Python: python.md
+    - Shell: shell.md
+    - Vim: vim.md
+    - Git: git.md
+    - Networking: networking.md
+    - Kubernetes: kubernetes.md
+    - Linux (Debian): linux-debian.md
+  - Lab:
+    - Prometheus Video Renderer: lab/prometheus-video-renderer.md
 
 theme:
   name: readthedocs

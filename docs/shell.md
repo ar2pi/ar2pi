@@ -1,4 +1,4 @@
-# Bash scripting
+# Shell
 
 ## .zshrc
 
@@ -11,8 +11,8 @@ Gist: [https://gist.github.com/ar2pi/41d1d0645d6437d7b69b6e7c64e88d8e](https://g
 ### Get current script directory and filename
 
 ```bash
-CURRENT_SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]}) # Relative path
-CURRENT_SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd) # Absolute path
+CURRENT_SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})               # Relative path
+CURRENT_SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)  # Absolute path
 CURRENT_SCRIPT_FILE=$(basename ${BASH_SOURCE[0]})
 ```
 
