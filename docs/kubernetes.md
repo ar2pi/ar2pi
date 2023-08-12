@@ -136,6 +136,9 @@ kubectl get all -A
 # list all kube-system resources
 kubectl get all -n kube-system
 
+# show Custom Resource Definitions (CRDs) installed by Istio
+kubectl get crds -n istio-system
+
 # watch all resources
 watch kubectl get all -A
 ```
