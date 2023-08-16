@@ -24,15 +24,17 @@ ${var:-"default"}
 
 See [POSIX spec](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_06_02)
 
-### Fail script
+### Bash strict mode
 
 ```bash
 #!bin/bash
 
 set -e           # exit on error
 set -u           # error on unitialized variable
-set -x           # print commands
 set -o pipefail  # error out on pipes
+
+# also
+set -x           # print out commands
 ```
 
 See [Set Builtin bash reference manual](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
