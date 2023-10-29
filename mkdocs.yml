@@ -11,16 +11,16 @@ nav:
   - About:
     - index.md
   - Cheatsheets:
-    - Go: go.md
-    - Python: python.md
-    - Shell: shell.md
-    - Vim: vim.md
-    - Git: git.md
-    - Networking: networking.md
-    - Kubernetes: kubernetes.md
-    - Linux (Debian): linux-debian.md
+    - go.md
+    - python.md
+    - shell.md
+    - vim.md
+    - git.md
+    - networking.md
+    - kubernetes.md
+    - linux-debian.md
   - Lab:
-    - Prometheus Video Renderer: lab/prometheus-video-renderer.md
+    - lab/prometheus-video-renderer.md
 
 theme:
   name: readthedocs
