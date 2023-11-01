@@ -59,7 +59,7 @@ pyenv uninstall python3 # remove virtualenv / python version
 ## Generate a `.python-version` file
 
 ```sh
-pyenv version-name > .python-version 
+echo $(pyenv version-name) > .python-version
 ```
 
 `.python-version` is then used by `pyenv-virtualenv` to automatically switch to correct virtualenv.
