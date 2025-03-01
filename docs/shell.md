@@ -236,7 +236,7 @@ main "$@"
 #!/usr/bin/env bash
 
 #
-# A simple bash function to output messages
+# A simple bash function to output colorful messages
 #
 # Usage: 
 #   out "Hello world!"
