@@ -35,23 +35,23 @@ eval "$(pyenv virtualenv-init -)"
 source ~/.zshrc
 ```
 
-## Configure a [Python 3](https://www.python.org/download/releases/3.0/) virtualenv
+## Configure a [Python 3](https://www.python.org/downloads/) virtualenv
 
 ```sh
-pyenv install --list | grep 3.9 | less # list possible python versions
+pyenv install --list | grep 3.13 | less # list possible python versions
 
-pyenv install 3.9.6 # install a python version
-pyenv virtualenv 3.9.6 python3 # create a new virtualenv
-pyenv activate python3 # activate virtualenv
+pyenv install 3.13              # install latest minor python version
+pyenv virtualenv 3.13 python3   # create a new virtualenv
+pyenv activate python3          # activate virtualenv
 ```
 
 Other useful `pyenv` commands:
 ```sh
-pyenv deactivate # deactivate current virtualenv
+pyenv deactivate    # deactivate current virtualenv
 
-pyenv versions # list installed python versions and available virtualenvs
-pyenv which python # see path to python executable
-pyenv version-name # see current virtualenv
+pyenv versions      # list installed python versions and available virtualenvs
+pyenv which python  # see path to python executable
+pyenv version-name  # see current virtualenv
 
 pyenv uninstall python3 # remove virtualenv / python version
 ```

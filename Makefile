@@ -7,7 +7,7 @@ GH_BOT_USER_EMAIL := bot@ar2pi.net
 # https://www.gnu.org/software/bash/manual/bash.html#Modifying-Shell-Behavior
 .SHELLFLAGS: -ceu
 
-install:
+init:
 	pip install --upgrade pip
 	pip install -r requirements.txt
 	git config --local core.hooksPath hooks
