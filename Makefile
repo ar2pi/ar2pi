@@ -8,6 +8,8 @@ GH_BOT_USER_EMAIL := bot@ar2pi.net
 .SHELLFLAGS: -ceu
 
 init:
+	python3 -m venv .venv
+	source .venv/bin/activate
 	pip install --upgrade pip
 	pip install -r requirements.txt
 	git config --local core.hooksPath hooks
