@@ -118,6 +118,16 @@ sudo sysctl -p
 
 ## Processes
 
+### Inspect running services 
+
+```sh
+systemctl list-units -t service --state running
+# check particular service 
+sudo systemctl status docker.service
+# go through logs, pg up / down ;)
+sudo journalctl -u docker.service | less
+```
+
 ### Control processes
 
 ```sh
