@@ -19,9 +19,9 @@ nav:
     - networking.md
     - kubernetes.md
     - linux-debian.md
-  - Poems: poems.md
   - Labs:
-    - lab/prometheus-video-renderer.md
+    - labs/prometheus-video-renderer.md
+  - poems.md
 
 theme:
   name: readthedocs

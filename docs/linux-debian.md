@@ -8,21 +8,45 @@
 sudo apt update && sudo apt upgrade && sudo apt autoremove
 ```
 
+### Upgrade Debian release
+
+[Official guide](https://wiki.debian.org/DebianUpgrade)
+
+```sh
+old_debian_version=bullseye
+new_debian_version=bookworm
+
+cat /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $old_debian_version
+
+sed -i "s/$old_debian_version/$new_debian_version/g" /etc/apt/sources.list
+find /etc/apt/sources.list.d/ -type f | xargs sudo sed -i "s/$old_debian_version/$new_debian_version/g"
+
+cat /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $new_debian_version
+
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get upgrade        # and go grab a coffee
+sudo apt-get full-upgrade   # and go grab a second coffee
+
+sudo apt-get autoremove
+sudo shutdown -r now
+```
+
 ### dpkg
 
 ```sh
-dpkg -l # list all packages installed
-dpkg --get-selections "*wget*" # list installed packages with 'wget' in their name
-dpkg -L wget # list files installed in the wget package
-dpkg -p wget # show information about an installed package
-dpkg -I webfs_1.21+ds1-8_amd64.deb # show information about a package file
-dpkg -c webfs_1.21+ds1-8_amd64.deb # list files in a package file
-dpkg -S /etc/init/networking.conf # show what package owns /etc/init/networking.conf
-dpkg -s wget # show the status of a package
-dpkg -V package # verify the installed package's integrity
-sudo dpkg -i foobar.deb	# installing or upgrading the foobar package
-sudo dpkg -r package # remove all of an installed package except for its configuration files
-sudo dpkg -P package # remove all of an installed package, including its configuration files
+dpkg -l                               # list all packages installed
+dpkg --get-selections "*wget*"        # list installed packages with 'wget' in their name
+dpkg -L wget                          # list files installed in the wget package
+dpkg -p wget                          # show information about an installed package
+dpkg -I webfs_1.21+ds1-8_amd64.deb    # show information about a package file
+dpkg -c webfs_1.21+ds1-8_amd64.deb    # list files in a package file
+dpkg -S /etc/init/networking.conf     # show what package owns /etc/init/networking.conf
+dpkg -s wget                          # show the status of a package
+dpkg -V package                       # verify the installed package's integrity
+sudo dpkg -i foobar.deb	              # installing or upgrading the foobar package
+sudo dpkg -r package                  # remove all of an installed package except for its configuration files
+sudo dpkg -P package                  # remove all of an installed package, including its configuration files
 ```
 
 ### apt
@@ -32,10 +56,10 @@ sudo dpkg -P package # remove all of an installed package, including its configu
 apt list --upgradable 
 [apt|apt-get] upgrade
 [apt|apt-get] autoremove
-[apt|apt-cache] search metapackage # see all metapackages
-[apt|apt-cache] search -n wget # search for packages called 'wget'
-[apt|apt-cache] show wget # show package info
-[apt|apt-cache] [depends|rdepends] wget # show dependencies / reverse deps respectively
+[apt|apt-cache] search metapackage    # see all metapackages
+[apt|apt-cache] search -n wget        # search for packages called 'wget'
+[apt|apt-cache] show wget             # show package info
+[apt|apt-cache] [depends|rdepends] wget   # show dependencies / reverse deps respectively
 ```
 
 ### Add an additional PPA for newer or extra packages
@@ -197,6 +221,21 @@ cat /etc/os-release | sed -nE "s/VERSION=\"(.*)\"/\1/p"
 ```sh
 ubuntu_version=xenial
 curl https://git.launchpad.net/ubuntu/+source/base-files/plain/etc/debian_version?h=ubuntu/$ubuntu_version
+```
+
+### Install a keyring file
+
+```sh
+# with gpg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/debian.gpg --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 6ED0E7B82643E131 F8D2585B8783D481
+sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/debian-security.gpg --keyserver keyserver.ubuntu.com --recv-keys 54404762BBB6E853 BDE6D2B9216EC7A8
+
+# or get public signing key (.asc / .key / .pub file) from some trusted source
+# and unpack it into either /etc/apt/keyrings or /usr/share/keyrings
+curl -sSL https://someurl.com/path/to/KEYNAME.[asc|key] | sudo gpg --dearmor -o /usr/share/keyrings/KEYNAME.gpg
+
+# then in a /etc/apt/sources.list.d file:
+# deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.33/deb/ stable main
 ```
 
 ### Add user to sudoers

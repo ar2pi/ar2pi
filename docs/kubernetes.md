@@ -190,6 +190,14 @@ source <(kubectl completion zsh)
 
 #### On Linux (Debian)
 
+Using community-owned package repositories (see [blog post](https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/#how-to-migrate-deb))
+```sh
+ver=$(curl -sSL https://dl.k8s.io/release/stable.txt | egrep -o "[0-9]+\.[0-9]+")
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v$ver/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+curl -sSL https://pkgs.k8s.io/core:/stable:/v$ver/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+sudo apt-get update
+```
+
 kubeadm-config.yaml
 ```yaml
 apiVersion: kubeadm.k8s.io/v1beta2

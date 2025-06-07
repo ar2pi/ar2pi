@@ -1,5 +1,3 @@
-# Poems
-
 C’est un trou de verdure où chante une rivière  
 Accrochant follement aux herbes des haillons  
 D’argent; où le soleil, de la montagne fière,  
@@ -18,6 +16,7 @@ Les parfums ne font pas frissonner sa narine;
 Il dort dans le soleil, la main sur sa poitrine  
 Tranquille. Il a deux trous rouges au côté droit.  
 
+Le dormeur du val  
 -- Arthur Rimbaud
 
 ---
@@ -47,4 +46,7 @@ Curse, bless, me now with your fierce tears, I pray.
 Do not go gentle into that good night.  
 Rage, rage against the dying of the light.  
 
+Do not go gentle into that good night  
 -- Dylan Thomas
+
+---
