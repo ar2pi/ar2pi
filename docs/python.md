@@ -2,77 +2,70 @@
 
 ## Local setup
 
-Install [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv). Respectively for Python version management and virtualenvs management. 
+Install [pyenv](https://github.com/pyenv/pyenv) to switch between Python versions.  
+Use `python3 -m venv .venv` to create a local virtual environment.  
+In zsh, install [zsh-autoswitch-virtualenv](https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv) to autoswitch between local venvs.  
+To manage local project dependencies use [poetry](https://python-poetry.org).
 
-> `pyenv-virtualenv` uses `python -m venv` (Python 3.3+) if it is available and the `virtualenv` command if not
-
----
-#### On Mac
-```sh
-brew install pyenv-virtualenv
-```
-#### On Linux (Debian)
-```sh
-sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-  libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
-curl https://pyenv.run | bash
-```
----
+### Use a specific [Python 3](https://www.python.org/downloads/) version
 
 ```sh
-echo '''
-# pyenv-virtualenv
-# see https://github.com/pyenv/pyenv-virtualenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-''' >> ~/.zshrc
+pyenv install 3.13        # install latest minor python version
+pyenv local 3.13          # use newly installed python version
 
-source ~/.zshrc
-```
-
-## Configure a [Python 3](https://www.python.org/downloads/) virtualenv
-
-```sh
-pyenv install --list | grep 3.13 | less # list possible python versions
-
-pyenv install 3.13              # install latest minor python version
-pyenv virtualenv 3.13 python3   # create a new virtualenv
-pyenv activate python3          # activate virtualenv
+python3 -m venv .venv     # create a virtualenv
+# or mkvenv w/ zsh-autoswitch-virtualenv
 ```
 
 Other useful `pyenv` commands:
 ```sh
-pyenv deactivate    # deactivate current virtualenv
-
-pyenv versions      # list installed python versions and available virtualenvs
+pyenv versions      # list installed python versions
+pyenv version-name  # see current python version
 pyenv which python  # see path to python executable
-pyenv version-name  # see current virtualenv
 
-pyenv uninstall python3 # remove virtualenv / python version
+pyenv uninstall 3.13.4  # remove python version, needs to be specific
 ```
 
-## Generate a `.python-version` file
+### Configure [Poetry](https://python-poetry.org) for dependency management
+
+```sh
+poetry config virtualenvs.create true --local
+poetry init
+```
+
+To use poetry only for dependency management in `pyproject.toml` add:
+```toml
+[tool.poetry]
+package-mode = false
+```
+
+To add some deps:
+```sh
+poetry add mkdocs
+poetry add -D black isort   # dev deps
+```
+
+### Generate a `.python-version` file
+
+Shouldn't be needed after running `pyenv local ...` but in any other case:
 
 ```sh
 echo $(pyenv version-name) > .python-version
 ```
 
-`.python-version` is then used by `pyenv-virtualenv` to automatically switch to correct virtualenv.
+`.python-version` is then used by `pyenv` to automatically switch to correct python version when navigating into the project's folder.
 
-## Generate a `requirements.txt` file
+### Generate a `requirements.txt` file
+
+Shouldn't be needed when using poetry but in any other case:
 
 ```sh
-pyenv virtualenv 3.9.6 [VENV_NAME] # create a new virtualenv
-pip install [DEPENDENCY_1] [...] # install dependencies
-pip freeze > requirements.txt # freeze requirements
+pyenv shell 3.13                    # use specific python version
+pip install [DEPENDENCY_1] [...]    # install dependencies
+pip freeze > requirements.txt       # freeze requirements
 ```
 
-## Install dependencies from a requirements.txt file
+#### Install dependencies from a requirements.txt file
 
 ```sh
 pip install -r requirements.txt
