@@ -48,6 +48,20 @@ For more options run [man ssh_config](https://linux.die.net/man/5/ssh_config).
 
 > In case you need to create `~/.ssh/config` ensure proper file permissions are set with `chmod 600 ~/.ssh/config`
 
+## Use an ssh key to sign git commits
+
+See the step by step instructions in this [blog post](https://dev.to/ccoveille/git-the-complete-guide-to-sign-your-commits-with-an-ssh-key-35bg).
+I.e.:
+```sh
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.pub)" >> ~/.ssh/allowed_signers
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+git config --global format.signoff true
+```
+
 ## Use a gpg key to sign git commits
 
 ### Generate a gpg key using YubiKey
