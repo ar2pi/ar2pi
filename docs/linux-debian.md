@@ -18,8 +18,7 @@ new_debian_version=bookworm
 
 cat /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $old_debian_version
 
-sed -i "s/$old_debian_version/$new_debian_version/g" /etc/apt/sources.list
-find /etc/apt/sources.list.d/ -type f | xargs sudo sed -i "s/$old_debian_version/$new_debian_version/g"
+find /etc/apt/sources.list /etc/apt/sources.list.d/ -type f | xargs sudo sed -i "s/$old_debian_version/$new_debian_version/g"
 
 cat /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $new_debian_version
 

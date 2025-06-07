@@ -11,8 +11,8 @@ nav:
   - About:
     - index.md
   - Cheatsheets:
-    - go.md
     - python.md
+    - go.md
     - shell.md
     - vim.md
     - git.md

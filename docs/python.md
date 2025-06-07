@@ -11,17 +11,17 @@ To manage local project dependencies use [poetry](https://python-poetry.org).
 
 ```sh
 pyenv install 3.13        # install latest minor python version
-pyenv local 3.13          # use newly installed python version
+pyenv local 3.13          # use newly installed python version and generates .python-version file
 
 python3 -m venv .venv     # create a virtualenv
-# or mkvenv w/ zsh-autoswitch-virtualenv
+# or `mkvenv` with zsh-autoswitch-virtualenv
 ```
 
 Other useful `pyenv` commands:
 ```sh
 pyenv versions      # list installed python versions
-pyenv version-name  # see current python version
-pyenv which python  # see path to python executable
+pyenv version-name  # show current python version
+pyenv which python  # show path to python executable
 
 pyenv uninstall 3.13.4  # remove python version, needs to be specific
 ```
