@@ -19,7 +19,8 @@ nav:
     - networking.md
     - kubernetes.md
     - linux-debian.md
-  - Lab:
+  - Poems: poems.md
+  - Labs:
     - lab/prometheus-video-renderer.md
 
 theme:
