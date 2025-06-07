@@ -118,13 +118,15 @@ sudo sysctl -p
 
 ## Processes
 
-### List processes
+### Control processes
 
 ```sh
 top
 ps aux
-ps axjf         # show process tree
-pgrep -a -u r2  # list all processes by user 'r2'
+ps axjf           # show process tree
+ps -eo pid,comm   # list all processes in 'pid comm' format
+pgrep -a -u r2    # list all processes by user 'r2'
+pgrep keybase | xargs sudo kill -9    # kill all processes matching 'keybase'
 ```
 
 ### ulimit
